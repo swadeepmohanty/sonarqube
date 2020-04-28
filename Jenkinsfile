@@ -1,9 +1,13 @@
 pipeline {
     agent any
+     tools {
+            maven 'Maven'
+            jdk 'Java11'
+        }
     stages {
             stage ('Build') {
                 steps {
-                        echo 'Running build phase...'
+                        bat 'mvn clean install'
                 }
             }
     }

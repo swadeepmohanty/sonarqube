@@ -1,9 +1,4 @@
 pipeline {
-     environment {
-        PROJECT_KEY = 'sq:MCRoomBook'
-        PROJECT_NAME = 'sq:MCRoomBook'
-     }
-
      agent any
 
      tools {

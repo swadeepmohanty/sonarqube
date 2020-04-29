@@ -7,7 +7,7 @@ pipeline {
     stages {
 
            stage('SonarQube analysis') {
-               withSonarQubeEnv('My SonarQube Server') {
+               withSonarQubeEnv('SonarServer') {
                    bat 'mvn clean package sonar:sonar'
                } // SonarQube taskId is automatically attached to the pipeline context
              }

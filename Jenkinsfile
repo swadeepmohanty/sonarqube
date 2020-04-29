@@ -20,7 +20,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps{
                withSonarQubeEnv('SonarServer') {
-                   runMavenSonarBuildBreaker([sonarProjectKey: 'Test', sonarProjectName: 'Test', sonarQualityGateId: 2])
+                   bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
                     }
                  }
              }

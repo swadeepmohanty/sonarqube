@@ -11,7 +11,7 @@ pipeline {
                    bat 'mvn clean package sonar:sonar'
                } // SonarQube taskId is automatically attached to the pipeline context
              }
-           }
+
            stage("Quality Gate"){
                timeout(time: 1, unit: 'MINUTES') { // Just in case something goes wrong, pipeline will be killed after a timeout
                def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
